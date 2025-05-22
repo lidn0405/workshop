@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    margin-left: 10px;
+}
+
+a {
+    background-color: black;
+    text-decoration: none;
+}
+
+#ypstemLogo {
+    height: 50px;
+    align-self: center;
+    margin-right: 5px;
+}
+
+#logoName {
+    color: white;
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#searchBar {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 600px;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 20px;
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 30px;
+}
+
+.topButtons {
+    margin-right: 10px;
+}
+
+.loginButton {
+    background-color: #1f3850;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 4px;
+    border-width: 0;
+}
+
+.loginButton:hover {
+    background-color: #223f5a;
+    cursor: pointer;
+}
