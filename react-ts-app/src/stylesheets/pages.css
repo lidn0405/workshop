@@ -1,4 +1,21 @@
-.bodyElement {
+/* Home CSS */
+.homePage {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Div Class for each section */
+.homeSection {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+/* Login CSS */
+
+.loginPage {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 300px;
 }

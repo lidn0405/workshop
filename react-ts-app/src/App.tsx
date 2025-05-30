@@ -2,22 +2,23 @@
 import './stylesheets/App.css'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
-import Layout from './pages/Layout';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+
+import LayoutPage from './pages/LayoutPage';
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />}/>
+        <Route element={<LayoutPage />}>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/profile' element={<ProfilePage />}/>
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />}/>
         </Route>
       </Routes>
     </BrowserRouter>

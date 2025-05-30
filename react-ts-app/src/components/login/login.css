@@ -1,0 +1,52 @@
+.formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f3850;
+    width: 500px;
+    height: 400px;
+    padding: 5px;
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+}
+
+.formHeading {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formLabel {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.formText {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 3px;
+    border: none;
+    height: 25px;
+    padding-left: 5px;
+}
+
+.loginButton {
+    margin-top: 30px;
+    border-radius: 3px;
+    background-color: white;
+    color: #1f3850;
+}
+
+.linkText {
+    color: white;
+    background-color: #1f3850;
+    text-decoration: none;
+}

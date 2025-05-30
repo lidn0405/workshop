@@ -1,4 +1,4 @@
-export default function Signup() {
+export default function SignupPage() {
     return (
         <div>
             <h1>SIGNUP PLACE HOLDER</h1>

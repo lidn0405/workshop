@@ -4,11 +4,11 @@ import { Footer } from "../components/footer/Footer";
 
 import "../stylesheets/pages.css"
 
-export default function Layout() {
+export default function LayoutPage() {
     return (
         <div>
             <Header />
-            <main className="bodyElement"><Outlet /></main>
+            <main><Outlet /></main>
             <Footer />
         </div>
     )

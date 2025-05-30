@@ -17,7 +17,7 @@ function ImageSlider({sliderImages}: ImageSliderProps) {
     }
 
     return (
-        <div style={{ maxWidth: "600px", width: "100%", height: "400px", margin: "100px", position: "relative"}}>
+        <div style={{ maxWidth: "500px", width: "100%", height: "400px", margin: "50px", position: "relative"}}>
             <img className="image" src={sliderImages[imageIndex]} /> 
             <button className="sliderButton" style={{left: 0}} onClick={handleLeft}>
                 <SlArrowLeft />
