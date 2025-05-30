@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #1f3850;
+}
+
+.footerText {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 30px;
+}
+
+a:link {
+    color: white;
+    background-color: #1f3850;
+    text-decoration: underline;
+}

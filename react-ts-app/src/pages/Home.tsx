@@ -1,8 +1,16 @@
+import { ImageSlider } from "../components/Slider/ImageSlider";
+import temp1 from "../../public/sliderImages/temp1.svg"
+import temp2 from "../../public/sliderImages/temp2.svg"
+import temp3 from "../../public/sliderImages/temp3.svg"
+
+const images = [temp1, temp2, temp3]
 
 export default function Home() {
     return (
         <div>
-            <h1>HOME PLACEHODLER</h1>
+            <div>
+                <ImageSlider sliderImages={images} />
+            </div>
         </div>
     );
 }
