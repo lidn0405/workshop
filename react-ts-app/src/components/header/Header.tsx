@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function Header() {
     let navigate = useNavigate();
-    const [signedIn, setSignedIn] = useState(true);
+    const [signedIn, setSignedIn] = useState(false);
 
     return (
         <div className="header">
