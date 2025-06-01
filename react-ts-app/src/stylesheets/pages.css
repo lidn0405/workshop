@@ -15,7 +15,7 @@
 
 .loginPage {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 100px;
-    margin-bottom: 300px;
+    margin-top: 80px;
 }

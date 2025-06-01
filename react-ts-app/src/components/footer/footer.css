@@ -2,16 +2,42 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #1f3850;
+    padding-top: 20px;
 }
 
 .footerText {
-    color: white;
+    color: #e1dfdb;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
     line-height: 30px;
 }
 
 a:link {
-    color: white;
+    color: #e1dfdb;
     background-color: #1f3850;
     text-decoration: underline;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 400px;
+    height: 300px;
+    background-color: #1f3850;
+}
+
+.logoHolder {
+    background-color: #1f3850;
+}
+
+.imgClass {
+    max-width: 80px;
+    width: 100%;
+    height: 80px;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #1f3850;
 }

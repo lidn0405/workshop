@@ -14,7 +14,7 @@ export default function HomePage() {
                 
             </div>
             <div className="homeSection">
-                <p>HELLO</p>
+                <p>SECOND SECTION</p>
             </div>
         </div>
     );
