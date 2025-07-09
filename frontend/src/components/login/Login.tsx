@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./login.css"
 import { useState } from "react"
+import { getUsers } from "../../api/userApi";
+import { getWorkshops } from "../../api/workshopApi";
 
 function Login() {
     // use to navigate after handleLogin logic
@@ -38,6 +40,9 @@ function Login() {
                      </div>
                 </div>
             </form>
+
+            <button onClick={getUsers}>GET USERS</button>
+            <button onClick={getWorkshops}>GET WORKSHOPS</button>
         </div>
     )
 }
