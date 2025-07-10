@@ -1,5 +1,5 @@
-import { Login } from "../components/login/Login"
-import "../stylesheets/pages.css"
+import { Login } from "./LoginComponents/Login"
+import "./login.css"
 
 export default function LoginPage() {
     return (

@@ -10,12 +10,3 @@
     justify-content: center;
     align-items: center;
 }
-
-/* Login CSS */
-
-.loginPage {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 80px;
-}

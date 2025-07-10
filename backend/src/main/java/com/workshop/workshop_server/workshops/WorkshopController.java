@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 
+
 @RestController
 @RequestMapping("/api")
 public class WorkshopController {
@@ -44,4 +45,10 @@ public class WorkshopController {
     public void deleteWorkshop(@PathVariable Long id) {
         workshopService.deleteWorkshop(id);
     }
+
+    @GetMapping("/workshops/{id}")
+    public Workshop getWorkshop(@PathVariable Long id) {
+        return workshopService.getWorkshop(id);
+    }
+    
 }

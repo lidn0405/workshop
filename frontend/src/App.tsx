@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
 import LayoutPage from './pages/LayoutPage';
-import HomePage from './pages/HomePage';
-import ProfilePage from './pages/ProfilePage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
+import HomePage from './pages/Home/HomePage';
+import ProfilePage from './pages/Profile/ProfilePage';
+import LoginPage from './pages/Login/LoginPage';
+import SignupPage from './pages/Login/SignupPage';
 
 function App() {
 
