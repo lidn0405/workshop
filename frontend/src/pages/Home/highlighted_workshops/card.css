@@ -1,0 +1,30 @@
+/* Card Section */
+.cardSection {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Card */
+.workshopCard {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    background-color: white;
+    margin-left: 10px;
+ }
+
+ .cardTitle {
+    font-size: 20px;
+    margin: 5px;
+    padding: 0;
+ }
+
+ .cardSubject {
+    font-size: 15px;
+    margin: 5px;
+ }
+
+ .cardDesc {
+    font-size: 12px;
+    margin: 5px;
+ }

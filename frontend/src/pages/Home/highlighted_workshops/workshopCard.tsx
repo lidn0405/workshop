@@ -1,3 +1,4 @@
+import "./card.css"
 
 interface Workshop {
     id: number;
@@ -13,10 +14,10 @@ interface WorkshopCardProps {
 function WorkshopCard(props: WorkshopCardProps) {
 
     return (
-        <div>
-            <h1>{props.workshop.name}</h1>
-            <h3>{props.workshop.subject}</h3>
-            <p>{props.workshop.description}</p>
+        <div className="workshopCard">
+            <h1 className="cardTitle">{props.workshop.name}</h1>
+            <h3 className="cardSubject">{props.workshop.subject}</h3>
+            <p className="cardDesc">{props.workshop.description}</p>
         </div>
     )
 }

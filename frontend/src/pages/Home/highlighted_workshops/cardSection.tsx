@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { getWorkshop } from "../../../api/workshopApi";
 import { WorkshopCard } from "./workshopCard";
+import "./card.css"
+
 
 interface Workshop {
     id: number;
@@ -26,7 +28,7 @@ function CardSection() {
     }), [];
 
     return (
-        <div>
+        <div className="cardSection">
             {workshops.map((workshop) => (
                 <WorkshopCard workshop={workshop} key={workshop.id}/>
             ))}
