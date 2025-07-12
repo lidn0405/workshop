@@ -2,5 +2,5 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 80px;
+    padding: 80px;
 }
