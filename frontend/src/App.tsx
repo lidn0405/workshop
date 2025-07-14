@@ -3,7 +3,7 @@ import './stylesheets/App.css'
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
-import LayoutPage from './pages/LayoutPage';
+import LayoutPage from './pages/Layout/LayoutPage';
 import HomePage from './pages/Home/HomePage';
 import ProfilePage from './pages/Profile/ProfilePage';
 import LoginPage from './pages/Login/LoginPage';

@@ -2,11 +2,17 @@
 import { Link, useNavigate } from 'react-router-dom'
 
 import './header.css'
-import { useState } from 'react';
 
-function Header() {
+type loginState = {
+    isLoggedIn: boolean
+}
+
+type setLoginState = {
+    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function Header({isLoggedIn}: loginState) {
     let navigate = useNavigate();
-    const [signedIn, setSignedIn] = useState(false);
 
     return (
         <div className="header">
@@ -19,14 +25,16 @@ function Header() {
             <input id="searchBar" type="text" placeholder="Search For a Workshop"/>
             <div className="topButtons">
                 {
-                    !signedIn ? (
+                    isLoggedIn ? (
+                        <div>
+                            <button className='headerButton' onClick={() => navigate("/profile")}>Profile</button>
+                        </div>
+                    )
+                    : (
                         <div>
                             <button className="headerButton" onClick={() => navigate("/login")}>Login</button>
                             <button className="headerButton" onClick={() => navigate("/signup")}>Signup</button>
                         </div>
-                    )
-                    : (
-                        <button className='headerButton' onClick={() => navigate("/profile")}>Profile</button>
                     )
                 }
             </div>

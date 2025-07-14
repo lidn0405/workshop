@@ -40,9 +40,6 @@ function Login() {
                      </div>
                 </div>
             </form>
-
-            <button onClick={getUsers}>GET USERS</button>
-            <button onClick={getWorkshops}>GET WORKSHOPS</button>
         </div>
     )
 }
