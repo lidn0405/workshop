@@ -1,6 +1,8 @@
-package com.workshop.workshop_server.workshops;
+package com.workshop.workshop_server.service.workshop;
 
 import java.util.List;
+
+import com.workshop.workshop_server.entity.Workshop;
 
 public interface WorkshopService {
     public abstract List<Workshop> getWorkshops();

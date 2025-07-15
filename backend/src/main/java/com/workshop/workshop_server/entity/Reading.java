@@ -1,8 +1,6 @@
-package com.workshop.workshop_server.reading;
+package com.workshop.workshop_server.entity;
 
 import java.time.LocalDateTime;
-
-import com.workshop.workshop_server.workshops.Workshop;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

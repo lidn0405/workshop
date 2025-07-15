@@ -1,6 +1,10 @@
-package com.workshop.workshop_server.workshops;
+package com.workshop.workshop_server.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.workshop.workshop_server.entity.Workshop;
+import com.workshop.workshop_server.service.workshop.WorkshopService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

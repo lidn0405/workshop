@@ -1,6 +1,4 @@
-package com.workshop.workshop_server.workshops;
-
-import com.workshop.workshop_server.user.User;
+package com.workshop.workshop_server.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

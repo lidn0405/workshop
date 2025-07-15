@@ -1,6 +1,8 @@
-package com.workshop.workshop_server.reading;
+package com.workshop.workshop_server.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.workshop.workshop_server.entity.Reading;
 
 public interface ReadingRepository extends JpaRepository<Reading, Long>{
     

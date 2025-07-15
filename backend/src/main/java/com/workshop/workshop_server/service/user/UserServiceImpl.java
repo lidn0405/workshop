@@ -1,8 +1,11 @@
-package com.workshop.workshop_server.user;
+package com.workshop.workshop_server.service.user;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.repository.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 

@@ -1,8 +1,12 @@
-package com.workshop.workshop_server.user;
+package com.workshop.workshop_server.controller;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.service.user.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +49,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
-    public User getMethodName(@PathVariable Long id) {
+    public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
     }
     

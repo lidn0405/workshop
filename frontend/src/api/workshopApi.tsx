@@ -8,7 +8,7 @@ async function getWorkshops() {
         }
 
         const json = await res.json();
-        console.log(json[0]);
+        console.log(json);
     } catch (error) {
         if (error instanceof Error) {
             console.log(error.message);

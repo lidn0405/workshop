@@ -1,8 +1,11 @@
-package com.workshop.workshop_server.workshops;
+package com.workshop.workshop_server.service.workshop;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.workshop.workshop_server.entity.Workshop;
+import com.workshop.workshop_server.repository.WorkshopRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 

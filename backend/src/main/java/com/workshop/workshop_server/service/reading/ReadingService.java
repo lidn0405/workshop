@@ -1,6 +1,8 @@
-package com.workshop.workshop_server.reading;
+package com.workshop.workshop_server.service.reading;
 
 import java.util.List;
+
+import com.workshop.workshop_server.entity.Reading;
 
 public abstract class ReadingService {
     public abstract List<Reading> getReadings();

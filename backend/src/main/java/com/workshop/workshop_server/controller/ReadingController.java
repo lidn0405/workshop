@@ -1,8 +1,12 @@
-package com.workshop.workshop_server.reading;
+package com.workshop.workshop_server.controller;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.workshop.workshop_server.entity.Reading;
+import com.workshop.workshop_server.service.reading.ReadingService;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

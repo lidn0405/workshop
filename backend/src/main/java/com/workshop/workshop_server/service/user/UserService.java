@@ -1,6 +1,8 @@
-package com.workshop.workshop_server.user;
+package com.workshop.workshop_server.service.user;
 
 import java.util.List;
+
+import com.workshop.workshop_server.entity.User;
 
 public interface UserService {
     abstract List<User> getUsers();

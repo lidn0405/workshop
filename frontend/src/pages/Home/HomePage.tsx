@@ -1,3 +1,5 @@
+import { getUsers } from "../../api/userApi";
+import { getWorkshops } from "../../api/workshopApi";
 import { CardSection } from "./highlighted_workshops/cardSection";
 import "./home.css"
 
@@ -13,6 +15,11 @@ export default function HomePage() {
             <div className="homeSection">
                 <h1>Check Out These Amazing Workshops!</h1>
                 <CardSection/>
+            </div>
+            <div>
+                <button onClick={() => getUsers()}>GET USERS</button>
+                <button onClick={() => getWorkshops()}>GET WORKSHOPS</button>
+                <button>GET READINGS</button>
             </div>
         </div>
     );
