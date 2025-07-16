@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.repository.UserRepository;
 import com.workshop.workshop_server.service.user.UserService;
+import com.workshop.workshop_server.entity.Workshop;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +22,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 @RequestMapping("/api")
 public class UserController {
 
-    @Autowired
     private UserService userService;
 
-    public UserController(UserService userService) {
+    public UserController(UserService userService, UserRepository userRepository) {
         this.userService = userService;
     }
 
@@ -51,6 +51,11 @@ public class UserController {
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
+    }
+    
+    @GetMapping("/users/{id}/workshops")
+    public List<Workshop> getWorkshops(@PathVariable Long id) {
+        return userService.getWorkshops(id);
     }
     
 }

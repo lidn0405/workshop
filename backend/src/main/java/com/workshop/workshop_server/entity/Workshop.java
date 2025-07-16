@@ -2,7 +2,10 @@ package com.workshop.workshop_server.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -19,8 +22,9 @@ public class Workshop {
     private String subject;
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "lead_id")
+    @JsonIgnore
     private User lead;
 
     @OneToMany
@@ -64,5 +68,9 @@ public class Workshop {
 
     public String getDescription() {
         return this.description;
+    }
+
+    public User getLead() {
+        return this.lead;
     }
 }

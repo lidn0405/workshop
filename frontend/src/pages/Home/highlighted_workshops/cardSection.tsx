@@ -25,7 +25,7 @@ function CardSection() {
         }
 
         loadWorkshops();
-    }), [];
+    }, []);
 
     return (
         <div className="cardSection">

@@ -3,6 +3,7 @@ package com.workshop.workshop_server.service.user;
 import java.util.List;
 
 import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.entity.Workshop;
 
 public interface UserService {
     abstract List<User> getUsers();
@@ -10,4 +11,5 @@ public interface UserService {
     abstract User updateUser(Long id, User updatedUser);
     abstract void deleteUser(Long id);
     abstract User getUser(Long id);
+    abstract List<Workshop> getWorkshops(Long id);
 }

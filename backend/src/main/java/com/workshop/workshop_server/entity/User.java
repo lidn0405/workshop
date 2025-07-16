@@ -1,8 +1,11 @@
 package com.workshop.workshop_server.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +18,9 @@ public class User {
     private String name;
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "lead")
+    private List<Workshop> led_workshops;
 
 
     public User() {
@@ -57,5 +63,9 @@ public class User {
     // Figure out how to do security
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Workshop> getLedWorkshops() {
+        return this.led_workshops;
     }
 }

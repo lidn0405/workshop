@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.entity.Workshop;
 import com.workshop.workshop_server.repository.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -49,5 +50,10 @@ public class UserServiceImpl implements UserService {
     public User getUser(Long id) {
         return userRepository.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User not found with id " + id));
+    }
+
+    @Override
+    public List<Workshop> getWorkshops(Long id) {
+        return getUser(id).getLedWorkshops();
     }
 }

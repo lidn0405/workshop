@@ -1,15 +1,16 @@
 
-const BASE_URL = '/api/users'
+const url = '/api/users'
 
 async function getUsers() {
     try {
-        const res = await fetch(BASE_URL);
+        const res = await fetch(url);
         if (!res.ok) {
             throw new Error(`Response status: ${res.status}`);
         }
 
         const json = await res.json();
         console.log(json);
+        // return json;
     } catch (error) {
         if (error instanceof Error) {
             console.log(error.message);
@@ -19,6 +20,26 @@ async function getUsers() {
     }
 }
 
+async function getWorkshopsFromUser(id: number) {
+    try {
+        const res = await fetch(`${url}/${id}/workshops`);
+        if (!res.ok) {
+            throw new Error(`Response status: ${res.status}`)
+        }
+        
+        const json = await res.json();
+        console.log(json);
+        // return json;
+    } catch (error) {
+        if (error instanceof Error) {
+            console.log(error);
+        } else {
+            console.log(String(error));
+        }
+    }
+}
+
 export {
     getUsers,
+    getWorkshopsFromUser
 }
