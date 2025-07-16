@@ -1,10 +1,13 @@
 package com.workshop.workshop_server.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Workshop {
@@ -19,6 +22,9 @@ public class Workshop {
     @ManyToOne
     @JoinColumn(name = "lead_id")
     private User lead;
+
+    @OneToMany
+    private List<Topic> topics;
 
     public Workshop() {
         this.name = "Workshop Name";
