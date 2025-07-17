@@ -5,6 +5,9 @@ import java.util.List;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -22,6 +25,12 @@ public class User {
     @OneToMany(mappedBy = "lead")
     private List<Workshop> led_workshops;
 
+    @ManyToMany
+     @JoinTable(
+        name = "joined_workshops",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "workshop_id"))
+    List<Workshop> joined_workshops;
 
     public User() {
         this.name = "None";

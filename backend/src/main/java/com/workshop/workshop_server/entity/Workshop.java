@@ -9,6 +9,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
@@ -26,6 +28,9 @@ public class Workshop {
     @JoinColumn(name = "lead_id")
     @JsonIgnore
     private User lead;
+
+    @ManyToMany(mappedBy = "joined_workshops")
+    List<User> student_list;
 
     @OneToMany
     private List<Topic> topics;

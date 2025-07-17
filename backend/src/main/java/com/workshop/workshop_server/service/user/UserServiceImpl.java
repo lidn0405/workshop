@@ -54,6 +54,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Workshop> getWorkshops(Long id) {
-        return getUser(id).getLedWorkshops();
+        User user = getUser(id);
+        return user.getLedWorkshops();
     }
 }
