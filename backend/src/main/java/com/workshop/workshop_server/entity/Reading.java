@@ -16,8 +16,8 @@ public class Reading {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "workshop_id")
-    private Workshop workshop;
+    @JoinColumn(name = "topic_id")
+    private Topic topic;
 
     private String title;
 

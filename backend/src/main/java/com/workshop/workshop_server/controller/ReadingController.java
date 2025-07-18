@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/readings")
 public class ReadingController {
     ReadingService readingService;
 
@@ -26,17 +26,17 @@ public class ReadingController {
         this.readingService = readingService;
     }
 
-    @GetMapping("/readings")
+    @GetMapping
     public List<Reading> getReadings() {
         return readingService.getReadings();
     }
 
-    @PostMapping("/readings")
+    @PostMapping
     public Reading addReading(@RequestBody Reading reading) {
         return readingService.addReading(reading);
     }
 
-    @PutMapping("/readings/{id}")
+    @PutMapping("/{id}")
     public Reading updateReading(@PathVariable Long id, @RequestBody Reading reading) {
         return readingService.updateReading(id, reading);
     }
@@ -46,7 +46,7 @@ public class ReadingController {
         readingService.deleteReading(id);
     }
     
-    @GetMapping("/readings/{id}")
+    @GetMapping("/{id}")
     public Reading getReading(@PathVariable Long id) {
         return readingService.getReading(id);
     }

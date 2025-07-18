@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/workshops")
 public class WorkshopController {
 
     private WorkshopService workshopService;
@@ -26,29 +26,29 @@ public class WorkshopController {
         this.workshopService = workshopService;
     }
 
-    @GetMapping("/workshops")
+    @GetMapping
     public List<Workshop> getWorkshops() {
         return workshopService.getWorkshops();
     }
+
+    @GetMapping("/{id}")
+    public Workshop getWorkshop(@PathVariable Long id) {
+        return workshopService.getWorkshop(id);
+    }
     
-    @PostMapping("/workshops")
+    @PostMapping
     public Workshop addWorkshop(@RequestBody Workshop workshop) {
         return workshopService.addWorkshop(workshop);
     }
 
-    @PutMapping("/workshops/{id}")
+    @PutMapping("/{id}")
     public Workshop updateWorkshop(@PathVariable Long id, @RequestBody Workshop workshop) {
         return workshopService.updateWorkshop(id, workshop);
     }
     
-    @DeleteMapping("/workshops/{id}")
+    @DeleteMapping("/{id}")
     public void deleteWorkshop(@PathVariable Long id) {
         workshopService.deleteWorkshop(id);
-    }
-
-    @GetMapping("/workshops/{id}")
-    public Workshop getWorkshop(@PathVariable Long id) {
-        return workshopService.getWorkshop(id);
     }
     
 }

@@ -1,7 +1,9 @@
 import { getUsers, getWorkshopsFromUser } from "../../api/userApi";
-import { getWorkshops } from "../../api/workshopApi";
+import { getWorkshops, getWorkshop} from "../../api/workshopApi";
 import { CardSection } from "./highlighted_workshops/cardSection";
 import "./home.css"
+
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
     return (
@@ -20,7 +22,11 @@ export default function HomePage() {
                 <button onClick={() => getUsers()}>GET USERS</button>
                 <button onClick={() => getWorkshops()}>GET WORKSHOPS</button>
                 <button>GET READINGS</button>
-                <button onClick={() => getWorkshopsFromUser(0)}>GET WORKSHOPS FROM USER</button>
+                <button onClick={() => getWorkshopsFromUser(1)}>GET WORKSHOPS FROM USER</button>
+                <button onClick={() => getWorkshop(1)}>GET FIRST WORKSHOP</button>
+                <Link to={"/workshop/1"}>
+                    <div>WORKSHOP 1</div>
+                </Link>
             </div>
         </div>
     );

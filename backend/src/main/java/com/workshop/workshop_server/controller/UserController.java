@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 public class UserController {
 
     private UserService userService;
@@ -28,32 +28,32 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/users")
+    @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
     
-    @PutMapping("/users/{id}")
+    @PutMapping("/{id}")
     public User updataUser(@PathVariable Long id,@RequestBody User newUser) {
         return userService.updateUser(id, newUser);
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(Long id) {
         userService.deleteUser(id);
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
         return userService.getUser(id);
     }
     
-    @GetMapping("/users/{id}/workshops")
+    @GetMapping("/{id}/workshops")
     public List<Workshop> getWorkshops(@PathVariable Long id) {
         return userService.getWorkshops(id);
     }

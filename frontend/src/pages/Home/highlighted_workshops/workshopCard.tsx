@@ -1,11 +1,6 @@
 import "./card.css"
 
-interface Workshop {
-    id: number;
-    name: string;
-    subject: string;
-    description: string;
-}
+import type { Workshop } from "../../../types/workshop.types";
 
 interface WorkshopCardProps {
     workshop: Workshop;

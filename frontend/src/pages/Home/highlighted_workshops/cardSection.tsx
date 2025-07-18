@@ -3,13 +3,7 @@ import { getWorkshop } from "../../../api/workshopApi";
 import { WorkshopCard } from "./workshopCard";
 import "./card.css"
 
-
-interface Workshop {
-    id: number;
-    name: string;
-    subject: string;
-    description: string;
-}
+import type { Workshop } from "../../../types/workshop.types";
 
 function CardSection() {
     const [workshops, setWorkshops] = useState<Workshop[]>([]);

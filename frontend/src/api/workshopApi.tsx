@@ -1,4 +1,4 @@
-const url = 'api/workshops'
+const url = '/api/workshops'
 
 async function getWorkshops() {
     try {
@@ -27,7 +27,6 @@ async function getWorkshop(id : number) {
         }
         
         const json = await res.json();
-        console.log(json)
         return json;
     } catch (error) {
         if (error instanceof Error) {

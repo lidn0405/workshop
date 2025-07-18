@@ -1,16 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import { getWorkshop } from "../../api/workshopApi";
+
+import type { Workshop } from "../../types/workshop.types";
 
 function WorkshopPage() {
-    let workshopId = useParams();
+    const params = useParams();
+    const workshop_id = params.workshop_id;
+
+    const [workshop, setWorkshop] = useState<Workshop>();
 
     useEffect(() => {
-        console.log(workshopId);
+        const getData = async () => {
+            const data = await getWorkshop(1);
+            setWorkshop(data);
+        }
+
+        getData();
     }, [])
 
     return (
         <div>
-            <p>HELLO</p>
+            <h1>{}</h1>
+            <p>{}</p>
         </div>
     )   
 }
