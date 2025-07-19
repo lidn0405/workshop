@@ -2,7 +2,7 @@ package com.workshop.workshop_server.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.entity.Workshop;
+import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.service.workshop.WorkshopService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;

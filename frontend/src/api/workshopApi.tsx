@@ -27,6 +27,7 @@ async function getWorkshop(id : number) {
         }
         
         const json = await res.json();
+        console.log(json);
         return json;
     } catch (error) {
         if (error instanceof Error) {

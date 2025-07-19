@@ -1,4 +1,4 @@
-package com.workshop.workshop_server.entity;
+package com.workshop.workshop_server.model;
 
 import java.util.List;
 
@@ -74,7 +74,4 @@ public class Workshop {
         return this.description;
     }
 
-    public User getLead() {
-        return this.lead;
-    }
 }

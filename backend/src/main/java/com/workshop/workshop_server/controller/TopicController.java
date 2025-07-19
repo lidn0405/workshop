@@ -3,7 +3,7 @@ package com.workshop.workshop_server.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.entity.Topic;
+import com.workshop.workshop_server.model.Topic;
 import com.workshop.workshop_server.service.topic.TopicService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

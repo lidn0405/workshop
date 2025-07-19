@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.workshop.workshop_server.entity.Reading;
+import com.workshop.workshop_server.model.Reading;
 import com.workshop.workshop_server.repository.ReadingRepository;
 
 import jakarta.persistence.EntityNotFoundException;

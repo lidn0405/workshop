@@ -2,7 +2,7 @@ package com.workshop.workshop_server.service.reading;
 
 import java.util.List;
 
-import com.workshop.workshop_server.entity.Reading;
+import com.workshop.workshop_server.model.Reading;
 
 public abstract class ReadingService {
     public abstract List<Reading> getReadings();

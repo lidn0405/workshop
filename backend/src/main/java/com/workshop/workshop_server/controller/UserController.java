@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.entity.User;
+import com.workshop.workshop_server.model.User;
+import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.UserRepository;
 import com.workshop.workshop_server.service.user.UserService;
-import com.workshop.workshop_server.entity.Workshop;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.workshop.workshop_server.entity.Topic;
+import com.workshop.workshop_server.model.Topic;
 import com.workshop.workshop_server.repository.TopicRepository;
 import jakarta.persistence.EntityNotFoundException;
 

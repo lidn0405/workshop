@@ -1,4 +1,4 @@
-package com.workshop.workshop_server.entity;
+package com.workshop.workshop_server.model;
 
 import java.time.LocalDateTime;
 

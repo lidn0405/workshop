@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.entity.Reading;
+import com.workshop.workshop_server.model.Reading;
 import com.workshop.workshop_server.service.reading.ReadingService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -4,6 +4,8 @@ import { getWorkshop } from "../../api/workshopApi";
 
 import type { Workshop } from "../../types/workshop.types";
 
+import "./workshop_page.css";
+
 function WorkshopPage() {
     const params = useParams();
     const workshop_id = params.workshop_id;
@@ -12,7 +14,7 @@ function WorkshopPage() {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await getWorkshop(1);
+            const data = await getWorkshop(Number(workshop_id));
             setWorkshop(data);
         }
 
@@ -21,8 +23,14 @@ function WorkshopPage() {
 
     return (
         <div>
-            <h1>{}</h1>
-            <p>{}</p>
+            <div className="workshop_header">
+                <h1>{workshop?.name}</h1>
+                <p>{workshop?.subject}</p>
+                <p>{workshop?.description}</p>
+            </div>
+            <hr />
+
+
         </div>
     )   
 }
