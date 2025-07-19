@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.WorkshopRepository;
 

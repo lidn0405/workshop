@@ -9,5 +9,4 @@ public class WorkshopServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WorkshopServerApplication.class, args);
 	}
-
 }

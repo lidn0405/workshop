@@ -40,7 +40,7 @@ public class Workshop {
         this.description = "None";
     }
 
-    public Workshop(String name, String subject, String description, Long lead_id) {
+    public Workshop(String name, String subject, String description) {
         this.name = name;
         this.subject = subject;
         this.description = description;
