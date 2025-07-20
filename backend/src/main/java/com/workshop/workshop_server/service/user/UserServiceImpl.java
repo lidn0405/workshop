@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.workshop.workshop_server.dto.UserDto;
 import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.UserRepository;
@@ -56,5 +57,11 @@ public class UserServiceImpl implements UserService {
     public List<Workshop> getWorkshops(Long id) {
         User user = getUser(id);
         return user.getLedWorkshops();
+    }
+
+    public UserDto getUserDto(Long id) {
+        User user = getUser(id);
+
+        return new UserDto(user);
     }
 }
