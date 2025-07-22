@@ -33,6 +33,11 @@ public class UserController {
         return userService.getUsers();
     }
 
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return userService.getUser(id);
+    }
+
     @PostMapping
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
@@ -46,11 +51,6 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(Long id) {
         userService.deleteUser(id);
-    }
-
-    @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
-        return userService.getUser(id);
     }
     
     @GetMapping("/{id}/workshops")

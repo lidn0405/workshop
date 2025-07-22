@@ -20,6 +20,27 @@ async function getUsers() {
     }
 }
 
+async function getUser(id: number) {
+    try {
+        // console.log(`${url}/${id}`)
+        const res = await fetch(`${url}/${id}`);
+
+        if (!res.ok) {
+            throw new Error(`Response status: ${res.status}`);
+        }
+
+        const json = await res.json();
+        // console.log(json);
+        return json;
+    } catch (error) {
+        if (error instanceof Error) {
+            console.log(error.message);
+        } else {
+            console.log(String(error));
+        }
+    }
+}
+
 async function getWorkshopsFromUser(id: number) {
     try {
         const res = await fetch(`${url}/${id}/workshops`);
@@ -41,5 +62,6 @@ async function getWorkshopsFromUser(id: number) {
 
 export {
     getUsers,
+    getUser,
     getWorkshopsFromUser
 }

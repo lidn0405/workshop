@@ -24,10 +24,7 @@ function CardSection() {
     return (
         <div className="cardSection">
             {workshops.map((workshop) => (
-                <div>
                     <WorkshopCard workshop={workshop} key={workshop.id}/>
-                    <h1>{workshop.id}</h1>
-                </div>
             ))}
         </div>
     )

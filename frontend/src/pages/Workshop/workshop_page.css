@@ -1,3 +1,44 @@
+/* Header */
 .workshop_header {
-    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+    border-bottom: 2px solid black;
+    background-color: #1f3850;
+    color: white;
+}
+
+.workshopName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rightHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joinButton {
+    width: 120px;
+    height: 50px;
+    border-radius: 5px;
+    border-style: none;
+    color: black;
+    background-color: white;
+}
+
+.joinButton:hover {
+    cursor: pointer;
+}
+
+/* Body */
+.contentBody {
+    padding-left: 60px;
+    padding-right: 60px;
 }

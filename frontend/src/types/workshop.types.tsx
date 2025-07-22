@@ -3,7 +3,7 @@ interface Workshop {
     name: string;
     subject: string;
     description: string;
-    lead: User;
+    leadId: number;
 }
 
 interface User {
