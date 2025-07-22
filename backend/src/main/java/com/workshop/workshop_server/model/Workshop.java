@@ -35,9 +35,6 @@ public class Workshop {
     private List<Topic> topics;
 
     public Workshop() {
-        this.name = "Workshop Name";
-        this.subject = "None";
-        this.description = "None";
     }
 
     public Workshop(String name, String subject, String description) {
@@ -74,4 +71,7 @@ public class Workshop {
         return this.description;
     }
 
+    public User getLead() {
+        return this.lead;
+    }
 }

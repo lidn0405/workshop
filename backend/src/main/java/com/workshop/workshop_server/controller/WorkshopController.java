@@ -2,6 +2,7 @@ package com.workshop.workshop_server.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.workshop.workshop_server.dto.WorkshopDto;
 import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.service.workshop.WorkshopService;
 
@@ -27,23 +28,23 @@ public class WorkshopController {
     }
 
     @GetMapping
-    public List<Workshop> getWorkshops() {
+    public List<WorkshopDto> getWorkshops() {
         return workshopService.getWorkshops();
     }
 
     @GetMapping("/{id}")
-    public Workshop getWorkshop(@PathVariable Long id) {
+    public WorkshopDto getWorkshop(@PathVariable Long id) {
         return workshopService.getWorkshop(id);
     }
     
     @PostMapping
-    public Workshop addWorkshop(@RequestBody Workshop workshop) {
-        return workshopService.addWorkshop(workshop);
+    public WorkshopDto addWorkshop(@RequestBody WorkshopDto workshopDto) {
+        return workshopService.addWorkshop(workshopDto);
     }
 
     @PutMapping("/{id}")
-    public Workshop updateWorkshop(@PathVariable Long id, @RequestBody Workshop workshop) {
-        return workshopService.updateWorkshop(id, workshop);
+    public WorkshopDto updateWorkshop(@PathVariable Long id, @RequestBody WorkshopDto workshopDto) {
+        return workshopService.updateWorkshop(id, workshopDto);
     }
     
     @DeleteMapping("/{id}")

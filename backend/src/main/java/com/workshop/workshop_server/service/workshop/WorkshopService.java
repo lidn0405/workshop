@@ -2,12 +2,12 @@ package com.workshop.workshop_server.service.workshop;
 
 import java.util.List;
 
-import com.workshop.workshop_server.model.Workshop;
+import com.workshop.workshop_server.dto.WorkshopDto;
 
 public interface WorkshopService {
-    public abstract List<Workshop> getWorkshops();
-    public abstract Workshop addWorkshop(Workshop workshop);
-    public abstract Workshop updateWorkshop(Long id, Workshop newWorkshop);
+    public abstract List<WorkshopDto> getWorkshops();
+    public abstract WorkshopDto addWorkshop(WorkshopDto workshopDto);
+    public abstract WorkshopDto updateWorkshop(Long id, WorkshopDto newWorkshopDto);
     public abstract void deleteWorkshop(Long id);
-    public abstract Workshop getWorkshop(Long id);
+    public abstract WorkshopDto getWorkshop(Long id);
 }
