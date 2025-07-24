@@ -11,12 +11,15 @@ import SignupPage from './pages/Login/SignupPage';
 import { WorkshopPage } from './pages/Workshop/WorkshopPage';
 import { DefaultPage } from './pages/DefaultPage';
 import { ExplorePage } from './pages/Explore/ExplorePage';
+import { WorkshopLayout } from './pages/Workshop_Layout/WorkshopLayout';
+import { WorkshopContent } from './pages/WorkshopContent/WorkshopContent';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
+        {/* Main Pages */}
         <Route element={<LayoutPage/>}>
           <Route path='/' element={<HomePage/>} />
           <Route path='/profile' element={<ProfilePage/>}/>
@@ -25,6 +28,11 @@ function App() {
           <Route path='/workshop/:workshop_id' element={<WorkshopPage/>}/>
           <Route path='/explore' element={<ExplorePage/>}/>
           <Route path='*' element={<DefaultPage/>}/>
+        </Route>
+
+        {/* Workshop Pages */}
+        <Route element={<WorkshopLayout/>} path='/:id'>
+          <Route path='temp' element={<WorkshopContent/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

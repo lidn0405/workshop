@@ -18,7 +18,7 @@ function Header({isLoggedIn}: loginState) {
         <div className="header">
             <Link style={{textDecoration: "none"}} to={"/"}>
                 <div className="logo">
-                    <img id="ypstemLogo" src="../../../YPStem Logo.png" />
+                    <img id="ypstemLogo" src="/YPStem Logo.png" />
                     <p id="logoName">YPStem Workshop</p>
                 </div>
             </Link>

@@ -1,7 +1,7 @@
 import "./workshop_page.css";
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { getWorkshop } from "../../api/workshopApi";
 import { getUser } from "../../api/userApi";
 
@@ -9,6 +9,7 @@ import type { User, Workshop } from "../../types/workshop.types";
 
 
 function WorkshopPage() {
+    const navigate = useNavigate();
     const params = useParams();
     const workshop_id = params.workshop_id;
 
@@ -29,9 +30,13 @@ function WorkshopPage() {
         getData();
     }, [])
 
+    function routeToContent() {
+        navigate(`/${workshop_id}/temp`)
+    }
+
     return (
         <div>
-            <div className="workshop_header">
+            <div className="workshop_top">
                 <div>
                     <p className="workshopName">{workshop?.name}</p>
                     <p className="workshopInfo">Created by {user?.name}</p>
@@ -46,6 +51,7 @@ function WorkshopPage() {
 
             <div className="contentBody">
                 <h2>Content</h2>
+                <button onClick={routeToContent}>TEST</button>
             </div>
         </div>
     )   

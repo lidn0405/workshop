@@ -11,18 +11,18 @@ function Footer() {
             <div className='socialMedia'>
                 <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", width: "200px"}}>
                     <a className='logoHolder' href='https://linktr.ee/ypstem' title='LinkTree' target='_blank'>
-                        <img className='imgClass' src="linktree.png" alt="LINKTREE"/>
+                        <img className='imgClass' src="/linktree.png" alt="LINKTREE"/>
                     </a>
                     <a className="logoHolder" href="https://www.linkedin.com/company/82071970/admin/dashboard/" title='LinkedIn' target='_blank'>
-                        <img className='imgClass' src="linkedin.png" alt="LINKEDIN" />
+                        <img className='imgClass' src="/linkedin.png" alt="LINKEDIN" />
                     </a>
                 </div>
                 <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", width: "200px"}}>
                     <a className='logoHolder' href="https://www.instagram.com/ypstem/" title='Instagram' target='_blank'>
-                        <img src="insta.png" alt="INSTAGRAM" className='imgClass'/>
+                        <img src="/insta.png" alt="INSTAGRAM" className='imgClass'/>
                     </a>
                     <a className='logoHolder' href="https://www.tiktok.com/@ypstem" title='TikTok' target='_blank'>
-                        <img className='imgClass' src="tiktok.jpg" alt="TIKTOK"/>
+                        <img className='imgClass' src="/tiktok.jpg" alt="TIKTOK"/>
                     </a>
                 </div>
             </div>

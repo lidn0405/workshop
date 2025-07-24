@@ -1,0 +1,39 @@
+.workshop_header {
+    display: flex;
+    justify-content: space-between;
+    width: fill;
+    color: white;
+    background-color: black;
+    height: 65px;
+    margin-top: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.top_left {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.link_style {
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.workshop_logo {
+    height: 50px;
+    align-self: center;
+    margin-right: 5px;
+    background-color: black;
+    margin-right: 5px;
+}
+
+.workshop_name {
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 20px;
+}

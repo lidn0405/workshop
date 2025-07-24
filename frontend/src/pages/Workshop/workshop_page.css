@@ -1,5 +1,5 @@
 /* Header */
-.workshop_header {
+.workshop_top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
