@@ -27,6 +27,31 @@ public class DataInitializer implements CommandLineRunner{
 
     @Override
     public void run(String... args) {
+        User admin = new User("Admin", "admin", "admin");
+        Workshop test1 = new Workshop("TestWorkshop", "Subject", "Desc", admin);
+
+        if (userRepository.count() == 0) {
+            userRepository.save(
+                new User("User1", "user1@email.com", "Password")
+            );
+            System.out.println("Users initialized");
+            userRepository.save(admin);
+        }
+
+        if (workshopRepository.count() == 0) {
+            workshopRepository.save(
+                new Workshop("Workshop1", "Subject", "Desc", admin)
+            );
+            workshopRepository.save(
+                new Workshop("Workshop2", "Subject", "Desc", admin)
+            );
+            workshopRepository.save(
+                new Workshop("Workshop3", "Subject", "Desc", admin)
+            );
+            workshopRepository.save(test1);
+            System.out.println("Workshops initialized");
+        }
+
         if (readingRepository.count() == 0) {
             readingRepository.save(
                 new Reading("Reading1", "AYAYA")
@@ -36,30 +61,11 @@ public class DataInitializer implements CommandLineRunner{
 
         if (topicRepository.count() == 0) {
             topicRepository.save(
-                new Topic("Topic1")  
+                new Topic("Topic1", test1)  
             );
             System.out.println("Topics initialized");
         }
-
-        if (userRepository.count() == 0) {
-            userRepository.save(
-                new User("User1", "user1@email.com", "Password")
-            );
-            System.out.println("Users initialized");
-        }
         
-        if (workshopRepository.count() == 0) {
-            workshopRepository.save(
-                new Workshop("Workshop1", "Subject", "Desc")
-            );
-            workshopRepository.save(
-                new Workshop("Workshop2", "Subject", "Desc")
-            );
-            workshopRepository.save(
-                new Workshop("Workshop3", "Subject", "Desc")
-            );
-            System.out.println("Workshops initialized");
-        }
     }
 
 }

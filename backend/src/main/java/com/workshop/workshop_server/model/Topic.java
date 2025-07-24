@@ -28,8 +28,9 @@ public class Topic {
         this.name = "None";
     }
 
-    public Topic(String name) {
+    public Topic(String name, Workshop workshop) {
         this.name = name;
+        this.workshop = workshop;
     }
 
     public String getName() {
@@ -38,5 +39,9 @@ public class Topic {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getId() {
+        return this.id;
     }
 }

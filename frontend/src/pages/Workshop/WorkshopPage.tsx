@@ -34,12 +34,13 @@ function WorkshopPage() {
             <div className="workshop_header">
                 <div>
                     <p className="workshopName">{workshop?.name}</p>
-                    <p>Created by {user?.name}</p>
-                    <p>{workshop?.subject}</p>
-                    <p>{workshop?.description}</p>
+                    <p className="workshopInfo">Created by {user?.name}</p>
+                    <p className="workshopInfo">{workshop?.subject}</p>
+                    <p className="workshopInfo">{workshop?.description}</p>
+                    <button className="joinButton">Join Workshop</button>
                 </div>
                 <div className="rightHeader">
-                    <button className="joinButton">Join Workshop</button>
+                    <img src="a" alt="IMAGE PLACEHOLDER" />
                 </div>
             </div>
 

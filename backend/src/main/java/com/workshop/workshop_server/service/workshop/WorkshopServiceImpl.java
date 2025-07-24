@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.workshop.workshop_server.dto.WorkshopDto;
+import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.WorkshopRepository;
 
@@ -41,8 +42,9 @@ public class WorkshopServiceImpl implements WorkshopService {
         return new WorkshopDto(saved);
     }
 
+    // TODO: FIX MAYBE
     @Transactional
-    public WorkshopDto updateWorkshop(Long id, WorkshopDto newWorkshopDto) {
+    public WorkshopDto updateWorkshop(Long id, WorkshopDto newWorkshopDto, User leadUser) {
         return workshopRepository.findById(id)
             .map(workshop -> {
                 workshop.setName(newWorkshopDto.getName());
@@ -52,7 +54,7 @@ public class WorkshopServiceImpl implements WorkshopService {
                 return new WorkshopDto(saved);
             })
             .orElseGet(() -> {
-                    Workshop workshop = new Workshop(newWorkshopDto.getName(), newWorkshopDto.getSubject(), newWorkshopDto.getDescription());
+                    Workshop workshop = new Workshop(newWorkshopDto.getName(), newWorkshopDto.getSubject(), newWorkshopDto.getDescription(), leadUser);
                     Workshop saved = workshopRepository.save(workshop);
                     return new WorkshopDto(saved);
                 }

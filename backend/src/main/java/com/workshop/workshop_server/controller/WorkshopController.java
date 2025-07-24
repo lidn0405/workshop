@@ -3,6 +3,7 @@ package com.workshop.workshop_server.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.workshop.workshop_server.dto.WorkshopDto;
+import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.service.workshop.WorkshopService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,14 +37,16 @@ public class WorkshopController {
         return workshopService.getWorkshop(id);
     }
     
+    // TODO: FIX TO ADD LEAD USER
     @PostMapping
     public WorkshopDto addWorkshop(@RequestBody WorkshopDto workshopDto) {
         return workshopService.addWorkshop(workshopDto);
     }
 
+    // TODO: FIX REQUEST BODY USING NEW DTO
     @PutMapping("/{id}")
-    public WorkshopDto updateWorkshop(@PathVariable Long id, @RequestBody WorkshopDto workshopDto) {
-        return workshopService.updateWorkshop(id, workshopDto);
+    public WorkshopDto updateWorkshop(@PathVariable Long id, @RequestBody WorkshopDto workshopDto, User leadUser) {
+        return workshopService.updateWorkshop(id, workshopDto, leadUser);
     }
     
     @DeleteMapping("/{id}")

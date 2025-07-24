@@ -29,7 +29,7 @@ public class Workshop {
     private User lead;
 
     @ManyToMany(mappedBy = "joined_workshops")
-    List<User> student_list;
+    private List<User> student_list;
 
     @OneToMany(mappedBy = "workshop")
     private List<Topic> topics;
@@ -37,10 +37,11 @@ public class Workshop {
     public Workshop() {
     }
 
-    public Workshop(String name, String subject, String description) {
+    public Workshop(String name, String subject, String description, User lead) {
         this.name = name;
         this.subject = subject;
         this.description = description;
+        this.lead = lead;
     }
 
     public void setName(String name) {
@@ -59,6 +60,10 @@ public class Workshop {
         return this.id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -73,5 +78,9 @@ public class Workshop {
 
     public User getLead() {
         return this.lead;
+    }
+
+    public List<Topic> getTopics() {
+        return this.topics;
     }
 }

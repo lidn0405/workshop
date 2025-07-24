@@ -1,20 +1,23 @@
 package com.workshop.workshop_server.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.workshop.workshop_server.model.Topic;
 import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.model.Workshop;
 
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 public class WorkshopDto {
     @Id
-    @GeneratedValue
     private Long id;
 
     private String name;
     private String subject;
     private String description;
     private Long leadId;
+    private List<Long> topicIds;
 
     public WorkshopDto(Workshop workshop) {
         this.id = workshop.getId();
@@ -25,6 +28,13 @@ public class WorkshopDto {
         User lead = workshop.getLead();
         if (lead != null) {
             this.leadId = lead.getId();
+        }
+
+        List<Topic> topics = workshop.getTopics();
+        if (topics != null) {
+            topicIds = topics.stream()
+                .map(Topic::getId)
+                .collect(Collectors.toList());
         }
     }
 
@@ -58,5 +68,9 @@ public class WorkshopDto {
 
     public void setDescription(String desc) {
         this.description = desc;
+    }
+
+    public List<Long> getTopicIds() {
+        return this.topicIds;
     }
 }
