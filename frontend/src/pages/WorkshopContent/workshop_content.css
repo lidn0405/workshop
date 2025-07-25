@@ -1,0 +1,6 @@
+.content_section {
+    display: flex;
+    height: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
