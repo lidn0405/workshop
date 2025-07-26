@@ -12,11 +12,13 @@ public class UserDto {
     private Long id;
     private String name;
     private String email;
+    private String username;
     private String password;
 
     public UserDto(User user) {
         this.name = user.getName();
         this.email = user.getEmail();
+        this.username = user.getUsername();
         this.password = user.getPassword();
     }
 
@@ -26,6 +28,10 @@ public class UserDto {
 
     public String getEmail() {
         return this.email;
+    }
+
+    public String getUsername() {
+        return this.username;
     }
 
     public String getPassword() {
@@ -38,6 +44,10 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setPassword(String password) {

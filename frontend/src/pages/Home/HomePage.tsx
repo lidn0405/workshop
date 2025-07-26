@@ -6,7 +6,7 @@ export default function HomePage() {
         <div className="homePage">
             <div className="homeSection" style={{backgroundColor: "#1f3850", flex: "row"}}>
                 <h1 className="welcomeSection">Deep dive into courses with our workshop!</h1>
-                <div style={{maxWidth: "100px", width: "100%", height: "400px"}}>
+                <div style={{maxWidth: "300px", width: "100%", height: "400px"}}>
                     <img src="LoginPicture.jpg" alt="Image unavailable" style={{width: "100%", borderRadius: "20px"}}/>
                 </div>
             </div>

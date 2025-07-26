@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id)
             .map(user -> {
                 user.setName(updatedUser.getName());
+                user.setUsername(updatedUser.getUsername());
                 user.setEmail(updatedUser.getEmail());
                 userRepository.save(user);
                 return user;
