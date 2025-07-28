@@ -102,6 +102,10 @@ public class User implements UserDetails{
         return this.led_workshops;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
