@@ -2,13 +2,9 @@ package com.workshop.workshop_server.dto;
 
 import com.workshop.workshop_server.model.User;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 
 public class UserDto {
 
-    @Id
-    @GeneratedValue
     private Long id;
     private String name;
     private String email;
@@ -16,10 +12,15 @@ public class UserDto {
     private String password;
 
     public UserDto(User user) {
+        this.id = user.getId();
         this.name = user.getName();
         this.email = user.getEmail();
         this.username = user.getUsername();
         this.password = user.getPassword();
+    }
+
+    public Long getId() {
+        return this.id;
     }
 
     public String getName() {
@@ -36,21 +37,5 @@ public class UserDto {
 
     public String getPassword() {
         return this.password;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
