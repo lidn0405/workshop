@@ -21,6 +21,7 @@
     background-color: black;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .workshop_logo {
@@ -32,6 +33,7 @@
 }
 
 .workshop_name {
+    margin-left: 5px;
     color: white;
     background-color: black;
     font-weight: bold;

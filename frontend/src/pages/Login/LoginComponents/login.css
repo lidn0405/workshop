@@ -2,16 +2,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #1f3850;
+    background-color: white;
     width: 500px;
     height: 500px;
     padding: 5px;
-    border: none;
-    border-radius: 15px;
+    border: solid 0px ;
+    border-radius: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* this creates the shadow */
 }
 
 .formHeading {
-    color: white;
+    color: black;
     font-size: 30px;
 }
 
@@ -19,34 +20,52 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.formLabel {
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 30px;
     margin-bottom: 5px;
 }
 
+.formLabel {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 3px;
+}
+
 .formText {
-    border-radius: 3px;
-    border: none;
     height: 40px;
     width: 400px;
     padding-left: 10px;
+    border-color: #e5e5e5;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.passwordSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showPasswordButton {
+    color: black;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
 }
 
 .loginButton {
-    height: 40px;
+    height: 45px;
     width: 120px;
     margin-top: 40px;
-    border-radius: 3px;
-    background-color: white;
-    color: #1f3850;
+    border-radius: 25px;
+    background-color: #1f3850;
+    color: white;
+    border-style: none;
 }
 
 .linkText {
-    color: white;
-    background-color: #1f3850;
+    color: black;
+    background-color: white;
     text-decoration: none;
 }

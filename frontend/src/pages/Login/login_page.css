@@ -3,4 +3,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     padding: 80px;
+    background-color: #faf6f4;
+    margin-top: 1px;
 }

@@ -1,5 +1,5 @@
 import { Login } from "./LoginComponents/Login"
-import "./login.css"
+import "./login_page.css"
 
 export default function LoginPage() {
     return (

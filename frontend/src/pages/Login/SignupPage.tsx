@@ -1,4 +1,5 @@
 import { Signup } from "./LoginComponents/Signup"
+import "./login_page.css"
 
 export default function SignupPage() {
     return (
