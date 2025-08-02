@@ -6,6 +6,7 @@ import { getWorkshop } from "../../api/workshopApi";
 import { getUser } from "../../api/userApi";
 
 import type { User, Workshop } from "../../types/workshop.types";
+import { WorkshopTopic } from "./Workshop_Topic/WorkshopTopic";
 
 
 function WorkshopPage() {
@@ -52,6 +53,10 @@ function WorkshopPage() {
             <div className="contentBody">
                 <h2>Content</h2>
                 <button onClick={routeToContent}>TEST</button>
+
+                <div>
+                    <WorkshopTopic />
+                </div>
             </div>
         </div>
     )   

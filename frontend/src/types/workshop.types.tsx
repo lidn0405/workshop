@@ -13,7 +13,13 @@ interface User {
     password: String;
 }
 
+interface Topic {
+    id: number;
+    name: String;
+}
+
 export type {
     Workshop,
-    User
+    User,
+    Topic,
 }
