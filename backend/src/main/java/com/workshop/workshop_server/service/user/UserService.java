@@ -2,14 +2,13 @@ package com.workshop.workshop_server.service.user;
 
 import java.util.List;
 
-import com.workshop.workshop_server.model.User;
-import com.workshop.workshop_server.model.Workshop;
+import com.workshop.workshop_server.dto.UserDto;
 
 public interface UserService {
-    abstract List<User> getUsers();
-    abstract User addUser(User user);
-    abstract User updateUser(Long id, User updatedUser);
+    abstract List<UserDto> getUsers();
+    abstract UserDto addUser(UserDto user);
+    abstract UserDto updateUser(Long id, UserDto updatedUser);
     abstract void deleteUser(Long id);
-    abstract User getUser(Long id);
-    abstract List<Workshop> getWorkshops(Long id);
+    abstract UserDto getUser(Long id);
+    abstract List<Long> getWorkshopIds(Long id);
 }

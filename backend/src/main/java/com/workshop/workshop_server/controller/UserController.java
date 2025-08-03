@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.workshop.workshop_server.dto.UserDto;
 import com.workshop.workshop_server.model.User;
 import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.UserRepository;
@@ -29,22 +30,22 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getUsers() {
+    public List<UserDto> getUsers() {
         return userService.getUsers();
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
+    public UserDto getUser(@PathVariable Long id) {
         return userService.getUser(id);
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user) {
+    public UserDto addUser(@RequestBody UserDto user) {
         return userService.addUser(user);
     }
     
     @PutMapping("/{id}")
-    public User updataUser(@PathVariable Long id,@RequestBody User newUser) {
+    public UserDto updataUser(@PathVariable Long id,@RequestBody UserDto newUser) {
         return userService.updateUser(id, newUser);
     }
 
@@ -54,8 +55,8 @@ public class UserController {
     }
     
     @GetMapping("/{id}/workshops")
-    public List<Workshop> getWorkshops(@PathVariable Long id) {
-        return userService.getWorkshops(id);
+    public List<Long> getWorkshops(@PathVariable Long id) {
+        return userService.getWorkshopIds(id);
     }
     
 }

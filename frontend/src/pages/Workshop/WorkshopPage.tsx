@@ -27,7 +27,7 @@ function WorkshopPage() {
 
             if (workshopData?.leadId !== undefined) {
                 const userData = await getUser(workshopData.leadId);
-                // setUser(userData);
+                setUser(userData);
             }
 
             const topicsData = await getTopicFromWorkshop(workshop_id);
@@ -61,7 +61,7 @@ function WorkshopPage() {
                 <button onClick={routeToContent}>TEST</button>
 
                 <div>
-                    {topics?.map((topic, index) => {
+                    {topics && topics?.map((topic, index) => {
                         return <WorkshopTopic topic={topic} key={index} />
                     })}
                 </div>

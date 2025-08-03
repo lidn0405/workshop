@@ -29,11 +29,11 @@ async function getUser(id: number) {
         }
 
         // console.log(res);
-        const text = await res.text();
-        console.log(text);
-        // const json = await res.json();
-        // console.log(json);
-        // return json;
+        // const text = await res.text();
+        // console.log(text);
+        const json = await res.json();
+        console.log(json);
+        return json;
     } catch (error) {
         if (error instanceof Error) {
             console.log("Error: " + error.message);

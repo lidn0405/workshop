@@ -68,6 +68,14 @@ public class Topic {
         return this.parent;
     }
 
+    public Workshop getWorkshop() {
+        return this.workshop;
+    }
+
+    public List<Reading> getReadings() {
+        return this.readings;
+    }
+
     public void setName(String name) {
         this.name = name;
     }

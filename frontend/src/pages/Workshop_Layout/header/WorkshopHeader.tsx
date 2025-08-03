@@ -25,11 +25,11 @@ function WorkshopHeader({workshop_id}:WorkshopHeaderProps) {
     return (
         <div className="workshop_header">
             <div className="top_left">
-                <Link to={"/"} className="link_style">
+                <Link to={"/"} className="logo_link">
                     <img src="/YPStem Logo.png" alt="Logo"  className="workshop_logo"/>
                 </Link>
                 <Link to={`/workshop/${workshop_id}`} className="link_style">
-                    <p className="workshop_name">{workshop?.name}</p>
+                    {workshop?.name}
                 </Link>
             </div>
         </div>

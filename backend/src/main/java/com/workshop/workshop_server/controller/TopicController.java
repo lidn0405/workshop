@@ -3,7 +3,7 @@ package com.workshop.workshop_server.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.model.Topic;
+import com.workshop.workshop_server.dto.TopicDto;
 import com.workshop.workshop_server.service.topic.TopicService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,17 +22,17 @@ public class TopicController {
     }
 
     @GetMapping
-    public List<Topic> getTopics() {
+    public List<TopicDto> getTopics() {
         return topicService.getTopics();
     }
 
     @GetMapping("/{id}")
-    public Topic getTopic(@PathVariable Long id) {
+    public TopicDto getTopic(@PathVariable Long id) {
         return topicService.getTopic(id);
     }
 
     @GetMapping("/{workshop_id}/all")
-    public List<Topic> getAllTopicsFromWorkshop(@PathVariable Long workshop_id) {
+    public List<TopicDto> getAllTopicsFromWorkshop(@PathVariable Long workshop_id) {
         return topicService.getTopicsFromWorkshop(workshop_id);
     }
     

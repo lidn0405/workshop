@@ -17,11 +17,21 @@
     padding-left: 10px;
 }
 
-.link_style {
+.logo_link {
     background-color: black;
+    align-content: center;
+}   
+
+.link_style,
+.link_style:link {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    text-decoration: none;
 }
 
 .workshop_logo {
@@ -30,12 +40,4 @@
     margin-right: 5px;
     background-color: black;
     margin-right: 5px;
-}
-
-.workshop_name {
-    margin-left: 5px;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    font-size: 20px;
 }

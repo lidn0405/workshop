@@ -80,6 +80,18 @@ public class User implements UserDetails{
         return this.password;
     }
 
+    public Role getRole() {
+        return this.role;
+    }
+
+    public List<Workshop> getLedWorkshops() {
+        return this.led_workshops;
+    }
+
+    public List<Workshop> getJoinedWorkshops() {
+        return this.joined_workshops;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -97,12 +109,16 @@ public class User implements UserDetails{
         this.password = password;
     }
 
-    public List<Workshop> getLedWorkshops() {
-        return this.led_workshops;
-    }
-
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public void setLedWorkshops(List<Workshop> led_workshops) {
+        this.led_workshops = led_workshops;
+    }
+
+    public void setJoinedWorkshops(List<Workshop> joined_workshops) {
+        this.joined_workshops = joined_workshops;
     }
 
     @Override

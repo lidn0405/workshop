@@ -2,11 +2,11 @@ package com.workshop.workshop_server.service.topic;
 
 import java.util.List;
 
-import com.workshop.workshop_server.model.Topic;
+import com.workshop.workshop_server.dto.TopicDto;
 
 public interface TopicService {
-    abstract List<Topic> getTopics();
-    abstract Topic getTopic(Long id);
-    abstract List<Topic> getSubtopics(Long id);
-    abstract List<Topic> getTopicsFromWorkshop(Long workshop_id);
+    abstract List<TopicDto> getTopics();
+    abstract TopicDto getTopic(Long id);
+    abstract List<TopicDto> getSubtopics(Long id);
+    abstract List<TopicDto> getTopicsFromWorkshop(Long workshop_id);
 }

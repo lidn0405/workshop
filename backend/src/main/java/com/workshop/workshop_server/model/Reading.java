@@ -37,6 +37,10 @@ public class Reading {
         createdDate = LocalDateTime.now();
     }
 
+    public Long getId() {
+        return this.id;
+    }
+
     public String getTitle() {
         return this.title;
     }

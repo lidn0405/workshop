@@ -1,6 +1,9 @@
 package com.workshop.workshop_server.dto;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.workshop.workshop_server.model.Topic;
 
 public class TopicDto {
     private Long id;
@@ -10,8 +13,17 @@ public class TopicDto {
     private List<Long> subtopic_ids;
     private Long parent_id;
 
-    public TopicDto() {
-        
+    public TopicDto(Topic topic) {
+        this.id = topic.getId();
+        this.name = topic.getName();
+        this.workshop_id = topic.getWorkshop().getId();
+        this.reading_ids = topic.getReadings().stream()
+            .map(Reading -> Reading.getId())
+            .collect(Collectors.toList());
+        this.parent_id = topic.getParent() != null ? topic.getParent().getId() : null; 
+        this.subtopic_ids = topic.getSubtopics().stream()
+            .map(Topic -> Topic.getId())
+            .collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -36,10 +48,6 @@ public class TopicDto {
 
     public Long getParentId() {
         return this.parent_id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setName(String name) {
