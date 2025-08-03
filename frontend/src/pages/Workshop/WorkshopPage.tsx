@@ -5,27 +5,33 @@ import { useNavigate, useParams } from "react-router-dom"
 import { getWorkshop } from "../../api/workshopApi";
 import { getUser } from "../../api/userApi";
 
-import type { User, Workshop } from "../../types/workshop.types";
+import type { Topic, User, Workshop } from "../../types/workshop.types";
 import { WorkshopTopic } from "./Workshop_Topic/WorkshopTopic";
+import { getTopicFromWorkshop } from "../../api/topicApi";
 
 
 function WorkshopPage() {
     const navigate = useNavigate();
     const params = useParams();
-    const workshop_id = params.workshop_id;
+    const workshop_id = Number(params.workshop_id);
 
     const [workshop, setWorkshop] = useState<Workshop>();
     const [user, setUser] = useState<User>();
+    const [topics, setTopics] = useState<Topic[]>();
 
     useEffect(() => {
         const getData = async () => {
-            const workshopData = await getWorkshop(Number(workshop_id));
+            console.log(workshop_id)
+            const workshopData = await getWorkshop(workshop_id);
             setWorkshop(workshopData);
 
             if (workshopData?.leadId !== undefined) {
                 const userData = await getUser(workshopData.leadId);
-                setUser(userData);
+                // setUser(userData);
             }
+
+            const topicsData = await getTopicFromWorkshop(workshop_id);
+            setTopics(topicsData);
         }
 
         getData();
@@ -55,7 +61,9 @@ function WorkshopPage() {
                 <button onClick={routeToContent}>TEST</button>
 
                 <div>
-                    <WorkshopTopic />
+                    {topics?.map((topic, index) => {
+                        return <WorkshopTopic topic={topic} key={index} />
+                    })}
                 </div>
             </div>
         </div>

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
@@ -32,9 +31,9 @@ public class TopicController {
         return topicService.getTopic(id);
     }
 
-    @GetMapping("/{id}/all")
-    public List<Topic> getAllTopicsFromWorkshop(@PathVariable Long id) {
-        // return new String();
+    @GetMapping("/{workshop_id}/all")
+    public List<Topic> getAllTopicsFromWorkshop(@PathVariable Long workshop_id) {
+        return topicService.getTopicsFromWorkshop(workshop_id);
     }
     
     

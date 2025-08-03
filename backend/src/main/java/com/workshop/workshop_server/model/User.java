@@ -1,5 +1,6 @@
 package com.workshop.workshop_server.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class User implements UserDetails{
     private Role role;
 
     @OneToMany(mappedBy = "lead")
-    private List<Workshop> led_workshops;
+    private List<Workshop> led_workshops = new ArrayList<>();
 
     @ManyToMany
      @JoinTable(

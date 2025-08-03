@@ -10,9 +10,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.workshop.workshop_server.config.JwtService;
 import com.workshop.workshop_server.dto.AuthRequest;
 import com.workshop.workshop_server.dto.AuthResponse;
+import com.workshop.workshop_server.security.JwtService;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

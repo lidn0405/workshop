@@ -1,4 +1,3 @@
-
 const url = '/api/users'
 
 async function getUsers() {
@@ -22,21 +21,24 @@ async function getUsers() {
 
 async function getUser(id: number) {
     try {
-        // console.log(`${url}/${id}`)
+        console.log(`${url}/${id}`)
         const res = await fetch(`${url}/${id}`);
 
         if (!res.ok) {
             throw new Error(`Response status: ${res.status}`);
         }
 
-        const json = await res.json();
+        // console.log(res);
+        const text = await res.text();
+        console.log(text);
+        // const json = await res.json();
         // console.log(json);
-        return json;
+        // return json;
     } catch (error) {
         if (error instanceof Error) {
-            console.log(error.message);
+            console.log("Error: " + error.message);
         } else {
-            console.log(String(error));
+            console.log("Error: " + String(error));
         }
     }
 }

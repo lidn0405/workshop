@@ -25,7 +25,18 @@ public class TopicServiceImpl implements TopicService{
             .orElseThrow(() -> new EntityNotFoundException("Topic not found with id: " + id));
     }
 
-    public List<Topic> getTopicsFromWorkshop(Long id) {
-        return topicRepository.findAllById(id)
+    public List<Topic> getSubtopics(Long id) {
+        Topic topic = topicRepository.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Topic not found with id: " + id));
+
+        return topic.getSubtopics();
+    }
+
+    public List<Topic> getTopicsFromWorkshop(Long workshop_id) {
+        List<Topic> topics = topicRepository.findByWorkshop_Id(workshop_id);
+        if (topics.isEmpty()) {
+            throw new EntityNotFoundException("No topics found for workshop with id: " + workshop_id);
+        }
+        return topics;
     }
 }

@@ -1,4 +1,4 @@
-package com.workshop.workshop_server.config;
+package com.workshop.workshop_server.security;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Key;

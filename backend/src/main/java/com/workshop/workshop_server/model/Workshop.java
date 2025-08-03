@@ -1,5 +1,6 @@
 package com.workshop.workshop_server.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,10 +30,10 @@ public class Workshop {
     private User lead;
 
     @ManyToMany(mappedBy = "joined_workshops")
-    private List<User> student_list;
+    private List<User> student_list = new ArrayList<>();
 
     @OneToMany(mappedBy = "workshop")
-    private List<Topic> topics;
+    private List<Topic> topics = new ArrayList<>();
 
     public Workshop() {
     }

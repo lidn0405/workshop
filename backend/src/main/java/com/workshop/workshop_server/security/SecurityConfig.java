@@ -1,4 +1,4 @@
-package com.workshop.workshop_server.config;
+package com.workshop.workshop_server.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -29,16 +29,18 @@ public class DataInitializer implements CommandLineRunner{
     public void run(String... args) {
         User admin = new User("Admin", "admin@email", "admin", "admin");
         Workshop test1 = new Workshop("TestWorkshop", "Subject", "Desc", admin);
+        Topic topicTest = new Topic("test", test1);
 
         if (userRepository.count() == 0) {
+            userRepository.save(admin);
             userRepository.save(
                 new User("John Smith", "user1@email.com", "User1", "Password")
             );
             System.out.println("Users initialized");
-            userRepository.save(admin);
         }
 
         if (workshopRepository.count() == 0) {
+            workshopRepository.save(test1);
             workshopRepository.save(
                 new Workshop("Workshop1", "Subject", "Desc", admin)
             );
@@ -48,7 +50,6 @@ public class DataInitializer implements CommandLineRunner{
             workshopRepository.save(
                 new Workshop("Workshop3", "Subject", "Desc", admin)
             );
-            workshopRepository.save(test1);
             System.out.println("Workshops initialized");
         }
 
@@ -60,8 +61,12 @@ public class DataInitializer implements CommandLineRunner{
         }
 
         if (topicRepository.count() == 0) {
+            topicRepository.save(topicTest);
             topicRepository.save(
                 new Topic("Topic1", test1)  
+            );
+            topicRepository.save(
+                new Topic("Topic2", test1, null, topicTest)  
             );
             System.out.println("Topics initialized");
         }

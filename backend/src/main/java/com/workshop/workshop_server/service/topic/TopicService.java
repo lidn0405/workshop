@@ -7,5 +7,6 @@ import com.workshop.workshop_server.model.Topic;
 public interface TopicService {
     abstract List<Topic> getTopics();
     abstract Topic getTopic(Long id);
-    abstract List<Topic> getTopicsFromWorkshop(Long id);
+    abstract List<Topic> getSubtopics(Long id);
+    abstract List<Topic> getTopicsFromWorkshop(Long workshop_id);
 }
