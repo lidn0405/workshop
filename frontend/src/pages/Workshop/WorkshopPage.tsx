@@ -56,6 +56,8 @@ function WorkshopPage() {
                 </div>
             </div>
 
+            <hr className="workshopDivider"/>
+
             <div className="contentBody">
                 <h2>Content</h2>
                 <button onClick={routeToContent}>TEST</button>

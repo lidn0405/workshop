@@ -5,8 +5,6 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.workshop.workshop_server.dto.UserDto;
-import com.workshop.workshop_server.model.User;
-import com.workshop.workshop_server.model.Workshop;
 import com.workshop.workshop_server.repository.UserRepository;
 import com.workshop.workshop_server.service.user.UserService;
 

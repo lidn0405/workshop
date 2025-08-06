@@ -8,4 +8,5 @@ import com.workshop.workshop_server.model.Topic;
 
 public interface TopicRepository extends JpaRepository<Topic, Long>{
     List<Topic> findByWorkshop_Id(Long workshop_id);
+    // List<Topic> findByParent(Long id);
 }

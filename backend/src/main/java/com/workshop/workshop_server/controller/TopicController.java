@@ -35,6 +35,12 @@ public class TopicController {
     public List<TopicDto> getAllTopicsFromWorkshop(@PathVariable Long workshop_id) {
         return topicService.getTopicsFromWorkshop(workshop_id);
     }
+
+    @GetMapping("/{id}/subtopics")
+    public List<TopicDto> getSubtopicsDtos(@PathVariable Long id) {
+        return topicService.getSubtopics(id);
+    }
+    
     
     
     

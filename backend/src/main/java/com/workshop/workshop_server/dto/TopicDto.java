@@ -16,7 +16,7 @@ public class TopicDto {
     public TopicDto(Topic topic) {
         this.id = topic.getId();
         this.name = topic.getName();
-        this.workshop_id = topic.getWorkshop().getId();
+        this.workshop_id = topic.getWorkshop() != null ? topic.getWorkshop().getId() : null;
         this.reading_ids = topic.getReadings().stream()
             .map(Reading -> Reading.getId())
             .collect(Collectors.toList());

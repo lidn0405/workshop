@@ -1,5 +1,8 @@
 package com.workshop.workshop_server.config;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -29,7 +32,11 @@ public class DataInitializer implements CommandLineRunner{
     public void run(String... args) {
         User admin = new User("Admin", "admin@email", "admin", "admin");
         Workshop test1 = new Workshop("TestWorkshop", "Subject", "Desc", admin);
+
         Topic topicTest = new Topic("test", test1);
+        Topic topicTest2 = new Topic("subtopic_test", null, null, null);
+        topicTest2.setParent(topicTest);
+        topicTest.setSubtopics(Arrays.asList(topicTest2));
 
         if (userRepository.count() == 0) {
             userRepository.save(admin);
@@ -62,11 +69,12 @@ public class DataInitializer implements CommandLineRunner{
 
         if (topicRepository.count() == 0) {
             topicRepository.save(topicTest);
+            topicRepository.save(topicTest2);
             topicRepository.save(
                 new Topic("Topic1", test1)  
             );
             topicRepository.save(
-                new Topic("Topic2", test1, null, topicTest)  
+                new Topic("Topic2", test1, null, null)  
             );
             System.out.println("Topics initialized");
         }
