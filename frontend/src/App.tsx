@@ -27,13 +27,13 @@ function App() {
           <Route path='/signup' element={<SignupPage/>}/>
           <Route path='/workshop/:workshop_id' element={<WorkshopPage/>}/>
           <Route path='/explore' element={<ExplorePage/>}/>
-          <Route path='*' element={<DefaultPage/>}/>
         </Route>
 
         {/* Workshop Pages */}
-        <Route element={<WorkshopLayout/>} path='/:id'>
-          <Route path='temp' element={<WorkshopContent/>}/>
+        <Route element={<WorkshopLayout/>} path='/content/:workshop_id'>
+          <Route path=':topic_id' element={<WorkshopContent/>}/>
         </Route>
+        <Route path='*' element={<DefaultPage/>}/>
       </Routes>
     </BrowserRouter>
   )

@@ -4,8 +4,23 @@ function getTopics() {
 
 }
 
-function getTopic(id: number) {
+async function getTopic(id: number) {
+    try {
+        console.log(`${url}/${id}`);
+        const res = await fetch(`${url}/${id}`)
+        if (!res.ok) {
+            throw new Error(`Error fetching topic from id`);
+        }
 
+        const json = await res.json();
+        return json;
+    } catch (error) {
+        if (error instanceof Error) {
+            console.log("Error:" + error);
+        } else {
+            console.log("Error: " + String(error));
+        }
+    }
 }
 
 async function getTopicFromWorkshop(id: number) {

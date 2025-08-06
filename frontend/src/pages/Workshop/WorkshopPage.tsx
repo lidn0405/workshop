@@ -38,7 +38,7 @@ function WorkshopPage() {
     }, [])
 
     function routeToContent() {
-        navigate(`/${workshop_id}/temp`)
+        navigate(`/content/${workshop_id}/1`)
     }
 
     return (
