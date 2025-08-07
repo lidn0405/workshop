@@ -41,5 +41,13 @@ public class AuthController {
 
         return ResponseEntity.ok(new AuthResponse(token));
     }
+
+    // @PostMapping("/register")
+    // public ResponseEntity<?> register(@RequestBody String entity) {
+    //     //TODO: process POST request
+        
+    //     return entity;
+    // }
+    
     
 }

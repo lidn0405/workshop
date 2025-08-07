@@ -13,12 +13,14 @@ import { DefaultPage } from './pages/DefaultPage';
 import { ExplorePage } from './pages/Explore/ExplorePage';
 import { WorkshopLayout } from './pages/Workshop_Layout/WorkshopLayout';
 import { WorkshopContent } from './pages/WorkshopContent/WorkshopContent';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
+      <AuthProvider>
+        <Routes>
         {/* Main Pages */}
         <Route element={<LayoutPage/>}>
           <Route path='/' element={<HomePage/>} />
@@ -35,6 +37,7 @@ function App() {
         </Route>
         <Route path='*' element={<DefaultPage/>}/>
       </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
