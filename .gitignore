@@ -57,6 +57,7 @@ dist-ssr
 *.sln
 *.sw?
 
+.DS_Store
 
 backend/src/main/resources/application.properties
 backend/src/main/java/com/workshop/workshop_server/security/
