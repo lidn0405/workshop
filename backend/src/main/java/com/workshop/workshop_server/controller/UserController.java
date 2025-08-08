@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -56,5 +57,11 @@ public class UserController {
     public List<Long> getWorkshops(@PathVariable Long id) {
         return userService.getWorkshopIds(id);
     }
+
+    @GetMapping("/email/{email}")
+    public UserDto getUserFromEmail(@PathVariable String email) {
+        return userService.getUserFromEmail(email);
+    }
+    
     
 }

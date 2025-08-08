@@ -1,18 +1,13 @@
-// import { useState, useEffect} from "react"
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../../context/useAuth';
 
 import './header.css'
 
-type loginState = {
-    isLoggedIn: boolean
-}
-
-type setLoginState = {
-    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-function Header({isLoggedIn}: loginState) {
+function Header() {
     let navigate = useNavigate();
+    const auth = useAuth();
+    console.log(auth.token);
+    var loggedIn = (auth.token != null);
 
     return (
         <div className="header">
@@ -25,7 +20,7 @@ function Header({isLoggedIn}: loginState) {
             <input id="searchBar" type="text" placeholder="Search For a Workshop"/>
             <div className="topButtons">
                 {
-                    isLoggedIn ? (
+                    loggedIn ? (
                         <div>
                             <button className='headerButton' onClick={() => navigate("/profile")}>Profile</button>
                         </div>

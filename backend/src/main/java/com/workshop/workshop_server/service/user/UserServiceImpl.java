@@ -28,7 +28,6 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
-    // TODO: Fix the joined and led workshops
     @Override
     public UserDto addUser(UserDto user) {
         User newUser = new User();
@@ -74,5 +73,13 @@ public class UserServiceImpl implements UserService {
     public List<Long> getWorkshopIds(Long id) {
         UserDto user = getUser(id);
         return user.getLedWorkshops();
+    }
+
+    @Override
+    public UserDto getUserFromEmail(String email) {
+        User user = userRepository.findByEmail(email)
+            .orElseThrow(() -> new EntityNotFoundException("User not found with email:" + email));
+        
+        return new UserDto(user);
     }
 }

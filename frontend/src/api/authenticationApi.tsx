@@ -18,7 +18,7 @@ async function loginUser(credentials: LoginCredentials) {
         if (!res.ok) {
             throw new Error("Login Failed");
         }
-
+        
         return await res.json();
 
     } catch (error) {

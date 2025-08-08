@@ -27,7 +27,7 @@ function Signup() {
 
         try {
             await signup({username, email, password});
-            navigate("/");
+            navigate("/login");
         } catch (error) {
             console.log("Error Signing Up");
             alert("Error Signing Up")

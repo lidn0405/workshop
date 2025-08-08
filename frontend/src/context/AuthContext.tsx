@@ -1,18 +1,22 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { createContext, useEffect, useState, type ReactNode } from 'react';
 import { loginUser, signupUser } from '../api/authenticationApi.tsx';
 
 // Credentials sent
 interface LoginCredentials {
-  username: string;
   email: string;
   password: string;
+}
+
+interface SignupCredentials extends LoginCredentials {
+  username: string;
 }
 
 // Context Type
 interface AuthContextType {
   token: string | null;
+  username: string | null;
   login: (credentials: LoginCredentials) => Promise<void>;
-  signup: (credentials: LoginCredentials) => Promise<void>;
+  signup: (credentials: SignupCredentials) => Promise<void>;
   logout: () => void;
 }
 
@@ -26,35 +30,37 @@ interface AuthProviderProps {
 // Create the Provider component
 function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('authToken'));
+  const [username, setUsername] = useState<string | null>(() => localStorage.getItem('username'))
 
   useEffect(() => {
-    if (token) {
+    if (token && username) {
       localStorage.setItem('authToken', token);
+      localStorage.setItem('username', username);
     } else {
       localStorage.removeItem('authToken');
+      localStorage.removeItem('username');
     }
   }, [token]);
 
-  // Login function uses your existing loginUser API call
+  // Auth login function using api
   const login = async (credentials: LoginCredentials) => {
     try {
       const response = await loginUser(credentials);
-      if (response && response.token) {
+      if (response && response.token && response.username) {
         setToken(response.token);
+        setUsername(response.username);
       }
     } catch (error) {
       console.error("Login failed in AuthContext", error);
-      throw error; // Re-throw error to be handled by the component
+      throw error;
     }
   };
 
-  // Signup function uses your existing signupUser API call
-  const signup = async (credentials: LoginCredentials) => {
+  // Auth signup function using api
+  const signup = async (credentials: SignupCredentials) => {
     try {
       // The signupUser function handles the API call
       await signupUser(credentials);
-      // Typically, you don't log in the user immediately after signup,
-      // but you could by calling login() here if your API returns a token on register.
     } catch (error) {
       console.error("Signup failed in AuthContext", error);
       throw error;
@@ -65,7 +71,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     setToken(null);
   };
 
-  const value = { token, login, signup, logout };
+  const value = { token, username, login, signup, logout };
 
   return (
     <AuthContext.Provider value={value}>

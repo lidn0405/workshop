@@ -11,4 +11,5 @@ public interface UserService {
     abstract void deleteUser(Long id);
     abstract UserDto getUser(Long id);
     abstract List<Long> getWorkshopIds(Long id);
+    abstract UserDto getUserFromEmail(String email);
 }

@@ -43,6 +43,21 @@ async function getUser(id: number) {
     }
 }
 
+async function getUserFromEmail(email: string) {
+    try {
+        const res = await fetch(`${url}/email/${email}`);
+        if (!res.ok) {
+            throw new Error("Could not fetch from email");
+        }
+
+        const json = await res.json();
+        return json
+    } catch (error) {
+        console.log("Error: could not fetch from email")
+        throw error;
+    }
+}
+
 async function getWorkshopsFromUser(id: number) {
     try {
         const res = await fetch(`${url}/${id}/workshops`);
@@ -65,5 +80,6 @@ async function getWorkshopsFromUser(id: number) {
 export {
     getUsers,
     getUser,
-    getWorkshopsFromUser
+    getWorkshopsFromUser,
+    getUserFromEmail
 }

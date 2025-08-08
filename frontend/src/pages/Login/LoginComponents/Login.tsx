@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./login.css"
-import { useState } from "react"
+import { useState, type FormEvent } from "react"
+import { useAuth } from "../../../context/useAuth";
 
 function Login() {
     // use to navigate after handleLogin logic
@@ -10,9 +11,21 @@ function Login() {
     const [password, setPassword] = useState("");
     const [hidePass, setHidePass] = useState(true);
 
-    function handleLogin() {
+    const { login } = useAuth();
+
+    async function handleLogin(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
         if (!email || !password) {
             alert("Please Fill Out All Information")
+            return;
+        }
+        try {
+            const res = await login({email, password})
+            navigate("/")
+        } catch (error) {
+            console.log(error);
+            alert("Invalid Username or Password")
+            throw error;
         }
     }
 
@@ -22,7 +35,7 @@ function Login() {
 
     return (
         <div style={{width: "500px", height: "600px"}}>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className="formContent">
                     <p className="formHeading">Log In</p>
                     <div className="formSection">
@@ -40,7 +53,7 @@ function Login() {
                             setPassword(e.target.value);
                         }}/>
                     </div>
-                    <button className="loginButton" type="button" onClick={handleLogin}>Login</button>
+                    <button className="loginButton" type="submit">Login</button>
                      <div>
                         <p className="formLabel">Don't have an account? <Link className="linkText" to={"/signup"}>Sign Up</Link></p>
                      </div>

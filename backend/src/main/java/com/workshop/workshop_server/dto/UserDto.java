@@ -20,6 +20,7 @@ public class UserDto {
         this.id = user.getId();
         this.email = user.getEmail();
         this.password = user.getPassword();
+        this.username = user.getDisplayName();
         this.role = user.getRole().name();
         if (user.getLedWorkshops() != null) {
             this.led_workshops_ids = user.getLedWorkshops().stream()
