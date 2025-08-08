@@ -26,7 +26,6 @@ public class User implements UserDetails{
     @Id
     @GeneratedValue
     private Long id;
-    private String name;
     private String username;
     private String email;
     private String password;
@@ -45,15 +44,13 @@ public class User implements UserDetails{
     List<Workshop> joined_workshops;
 
     public User() {
-        this.name = "None";
         this.email = "None";
         this.username = "None";
         this.password = "None";
         this.role = Role.USER;
     }
 
-    public User(String name, String email, String username, String password) {
-        this.name = name;
+    public User(String email, String username, String password) {
         this.email = email;
         this.username = username;
         this.password = password;
@@ -64,15 +61,17 @@ public class User implements UserDetails{
         return this.id;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
     public String getEmail() {
         return this.email;
     }
 
+    // Used for auth purposes
+    @Override
     public String getUsername() {
+        return this.email;
+    }
+
+    public String getDisplayName() {
         return this.username;
     }
 
@@ -90,10 +89,6 @@ public class User implements UserDetails{
 
     public List<Workshop> getJoinedWorkshops() {
         return this.joined_workshops;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setEmail(String email) {
@@ -123,7 +118,7 @@ public class User implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role.name()));
     }
 
     @Override public boolean isAccountNonExpired() { return true; }

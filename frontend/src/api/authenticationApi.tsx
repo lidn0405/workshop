@@ -1,13 +1,9 @@
 interface LoginCredentials {
-    username: String;
-    password: String;
+    email: string;
+    password: string;
 }
 
-interface SignupCredentials extends LoginCredentials {
-    email: String;
-}
-
-const url = "/api/auth"
+const url = "/auth"
 
 async function loginUser(credentials: LoginCredentials) {
     try {
@@ -31,7 +27,7 @@ async function loginUser(credentials: LoginCredentials) {
     }
 }
 
-async function signupUser(credentials: SignupCredentials) {
+async function signupUser(credentials: LoginCredentials) {
      try {
         const res = await fetch(`${url}/register`, {
             method: 'POST',

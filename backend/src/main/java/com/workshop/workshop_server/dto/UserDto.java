@@ -9,7 +9,6 @@ import com.workshop.workshop_server.model.User;
 public class UserDto {
 
     private Long id;
-    private String name;
     private String email;
     private String username;
     private String password;
@@ -19,25 +18,23 @@ public class UserDto {
 
     public UserDto(User user) {
         this.id = user.getId();
-        this.name = user.getName();
         this.email = user.getEmail();
-        this.username = user.getUsername();
         this.password = user.getPassword();
         this.role = user.getRole().name();
-        this.led_workshops_ids = user.getLedWorkshops().stream()
+        if (user.getLedWorkshops() != null) {
+            this.led_workshops_ids = user.getLedWorkshops().stream()
                 .map(Workshop -> Workshop.getId())
                 .collect(Collectors.toList());
-        this.joined_workshops_ids = user.getJoinedWorkshops().stream()
+        }
+        if (user.getJoinedWorkshops() != null) {
+            this.joined_workshops_ids = user.getJoinedWorkshops().stream()
                 .map(Workshop -> Workshop.getId())
                 .collect(Collectors.toList());
+        }
     }
 
     public Long getId() {
         return this.id;
-    }
-
-    public String getName() {
-        return this.name;
     }
 
     public String getEmail() {

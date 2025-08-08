@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto addUser(UserDto user) {
         User newUser = new User();
-        newUser.setName(user.getName());
         newUser.setEmail(user.getEmail());
         newUser.setUsername(user.getUsername());
         try {
@@ -48,7 +47,6 @@ public class UserServiceImpl implements UserService {
     public UserDto updateUser(Long id, UserDto updatedUser) {
         User tempUser = userRepository.findById(id)
             .map(user -> {
-                user.setName(updatedUser.getName());
                 user.setUsername(updatedUser.getUsername());
                 user.setEmail(updatedUser.getEmail());
                 userRepository.save(user);

@@ -1,37 +1,32 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { loginUser, signupUser } from '../api/authenticationApi.tsx';
 
-// Define the shape of your credentials and user data
+// Credentials sent
 interface LoginCredentials {
   username: string;
+  email: string;
   password: string;
 }
 
-interface SignupCredentials extends LoginCredentials {
-  email: string;
-}
-
-// Define the shape of the context value
+// Context Type
 interface AuthContextType {
   token: string | null;
   login: (credentials: LoginCredentials) => Promise<void>;
-  signup: (credentials: SignupCredentials) => Promise<void>;
+  signup: (credentials: LoginCredentials) => Promise<void>;
   logout: () => void;
 }
 
-// Create the context with a default value of null
+// Type AtuhContext or null
 const AuthContext = createContext<AuthContextType | null>(null);
 
-// Define the props for the AuthProvider
 interface AuthProviderProps {
   children: ReactNode;
 }
 
 // Create the Provider component
-export function AuthProvider({ children }: AuthProviderProps) {
+function AuthProvider({ children }: AuthProviderProps) {
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('authToken'));
 
-  // This effect syncs the token state with localStorage
   useEffect(() => {
     if (token) {
       localStorage.setItem('authToken', token);
@@ -54,7 +49,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   };
 
   // Signup function uses your existing signupUser API call
-  const signup = async (credentials: SignupCredentials) => {
+  const signup = async (credentials: LoginCredentials) => {
     try {
       // The signupUser function handles the API call
       await signupUser(credentials);
@@ -79,11 +74,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   );
 }
 
-// Create a custom hook for easy consumption of the context
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
+export {
+  AuthProvider,
+  AuthContext,
+}
+
+export type {
+  AuthContextType,
 }
