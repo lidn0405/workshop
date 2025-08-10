@@ -1,0 +1,32 @@
+.profilePage {
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.profilePicture {
+    width: 100%;
+    width: 250px;
+    height: 250px;
+}
+
+.userSettings {
+    display: flex;
+    width:60%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.formInput {
+    width: 250px;
+    height: 25px;
+}
