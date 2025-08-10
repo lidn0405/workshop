@@ -46,7 +46,7 @@ function WorkshopPage() {
             <div className="workshop_top">
                 <div>
                     <p className="workshopName">{workshop?.name}</p>
-                    <p className="workshopInfo">Created by {user?.name}</p>
+                    <p className="workshopInfo">Created by {user?.username}</p>
                     <p className="workshopInfo">{workshop?.subject}</p>
                     <p className="workshopInfo">{workshop?.description}</p>
                     <button className="joinButton">Join Workshop</button>

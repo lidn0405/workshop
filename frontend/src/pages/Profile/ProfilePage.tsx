@@ -29,7 +29,7 @@ export default function ProfilePage() {
         }
 
         getData();
-    }, [])
+    }, [auth.username])
 
     function updateSettings() {
 

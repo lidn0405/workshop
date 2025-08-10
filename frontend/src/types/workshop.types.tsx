@@ -16,6 +16,8 @@ interface User {
 interface Topic {
     id: number;
     name: String;
+    workshopId: number;
+    parentId: number;
 }
 
 export type {

@@ -35,7 +35,7 @@ function WorkshopTopic({topic} : {topic: Topic}) {
                 <p className="topicName">{topic.name}</p>
             </button>
             {displayData && subtopics && subtopics.length > 0 ? subtopics.map(subtopic => {
-                return (<WorkshopSubtopic subtopic={subtopic} key={subtopic.id}/>);
+                return (<WorkshopSubtopic topic={topic} subtopic={subtopic} key={subtopic.id}/>);
             }) : null}
         </div>
     )

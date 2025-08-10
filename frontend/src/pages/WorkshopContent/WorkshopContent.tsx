@@ -32,7 +32,6 @@ function WorkshopContent() {
     return (
         <div className="content_section">
             <p>{workshop?.subject}</p>
-            <hr />
             <p>{topic?.name}</p>
         </div>
     )
