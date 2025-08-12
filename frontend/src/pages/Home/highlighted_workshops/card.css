@@ -3,32 +3,43 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 400px;
 }
 
 /* Card */
 .workshopCard {
     display: flex;
     flex-direction: column;
-    height: 100px;
+    height: 150px;
+    width: 300px;
     background-color: white;
     cursor: pointer;
-    border: none;
+    border: solid black 1px;
     border-radius: 4px;
+    margin-right: 20px;
+    margin-left: 20px;
+ }
+
+ .workshopDesc {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center; /* Vertically centers the content */
+   gap: 4px; /* Adds a small, consistent space between text elements */
+   padding: 0 8px; /* Adds some horizontal space so text isn't against the edge */
  }
 
  .cardTitle {
     font-size: 20px;
-    margin: 5px;
+    margin: 0px;
     padding: 0;
  }
 
  .cardSubject {
     font-size: 15px;
-    margin: 5px;
+    margin: 0px;
  }
 
  .cardDesc {
     font-size: 12px;
-    margin: 5px;
+    margin: 0px;
  }

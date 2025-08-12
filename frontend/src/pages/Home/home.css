@@ -1,17 +1,71 @@
-/* Home CSS */
 .homePage {
     display: flex;
     flex-direction: column;
 }
 
-/* Div Class for each section */
 .homeSection {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    height: 500px;
+    padding: 40px;
+    margin-top: 1px;
+}
+
+.welcomeMessage {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 40px;
+}
+
+.catchPhrase {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.smallMessageSection {
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.smallerMessage {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.welcomeImage {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.learnNowButton {
+    margin-top: 60px;
+    margin-left: 20px;
+    width: 400px;
+    height: 80px;
+    background-color: #1f3850;
+    border-radius: 20px;
+    border: solid white;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.workshopSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 300px;
-}
-
-.welcomeSection {
-    color: white;
+    padding: 40px;
+    margin-top: 1px;   
 }
