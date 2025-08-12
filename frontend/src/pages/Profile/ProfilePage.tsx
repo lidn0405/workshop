@@ -52,7 +52,7 @@ export default function ProfilePage() {
                 <p>{user?.username}</p>
                 <button onClick={logout}>LOGOUT</button>
             </div>
-            <div className="userSettings">
+            <div className="settings">
                 <p>Profile Settings</p>
                 <form className="formClass" action={updateSettings}>
                     <div className="formSection">
@@ -65,6 +65,10 @@ export default function ProfilePage() {
                     </div>
                     <button className="" type="submit">Update Settings</button>
                 </form>
+                <div className="related_workshops">
+                    <p>Workshops</p>
+                    <button onClick={() => navigate('/create_workshop')}>Create Workshop</button>
+                </div>
             </div>
         </div>
     )

@@ -14,6 +14,7 @@ import { ExplorePage } from './pages/Explore/ExplorePage';
 import { WorkshopLayout } from './pages/Workshop_Layout/WorkshopLayout';
 import { WorkshopContent } from './pages/WorkshopContent/WorkshopContent';
 import { AuthProvider } from './context/AuthContext';
+import { CreateWorkshopPage } from './pages/CreateWorkshop/CreateWorkshopPage';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/signup' element={<SignupPage/>}/>
           <Route path='/workshop/:workshop_id' element={<WorkshopPage/>}/>
           <Route path='/explore' element={<ExplorePage/>}/>
+          <Route path='/create_workshop' element={<CreateWorkshopPage/>}/>
         </Route>
 
         {/* Workshop Pages */}
